@@ -111,6 +111,7 @@ module edge_detection_top #(
     // Gaussian Filter - noise reduction preprocessing
     gaussian_filter #(
         .IMAGE_WIDTH(IMAGE_WIDTH),
+        .IMAGE_HEIGHT(IMAGE_HEIGHT),
         .DATA_WIDTH(DATA_WIDTH)
     ) gauss_filter (
         .clk(clk),
@@ -125,6 +126,7 @@ module edge_detection_top #(
     // Sobel Operator - gradient calculation
     sobel_operator #(
         .IMAGE_WIDTH(IMAGE_WIDTH),
+        .IMAGE_HEIGHT(IMAGE_HEIGHT),
         .DATA_WIDTH(DATA_WIDTH)
     ) sobel_op (
         .clk(clk),
@@ -155,6 +157,7 @@ module edge_detection_top #(
     // Non-Maximum Suppression
     nonmax_suppression #(
         .IMAGE_WIDTH(IMAGE_WIDTH),
+        .IMAGE_HEIGHT(IMAGE_HEIGHT),
         .DATA_WIDTH(DATA_WIDTH)
     ) nonmax_supp (
         .clk(clk),
@@ -170,6 +173,7 @@ module edge_detection_top #(
     // Hysteresis Thresholding - final edge detection
     hysteresis_threshold #(
         .IMAGE_WIDTH(IMAGE_WIDTH),
+        .IMAGE_HEIGHT(IMAGE_HEIGHT),
         .DATA_WIDTH(DATA_WIDTH)
     ) hysteresis_thresh (
         .clk(clk),

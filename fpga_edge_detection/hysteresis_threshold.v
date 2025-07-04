@@ -5,6 +5,7 @@
 
 module hysteresis_threshold #(
     parameter IMAGE_WIDTH = 640,
+    parameter IMAGE_HEIGHT = 480,
     parameter DATA_WIDTH = 8,
     parameter HIGH_THRESHOLD = 8'd100,
     parameter LOW_THRESHOLD = 8'd50
